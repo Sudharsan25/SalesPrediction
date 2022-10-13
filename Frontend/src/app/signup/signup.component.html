@@ -1,0 +1,69 @@
+<section class="register-block">
+    <div class="container">
+        <div class="row ">
+            <div class="col login-cont">
+                <div class="form-group side-group">
+                    <span>Already have an account?</span>
+                    <a href="javascript:void(0);" routerLink="/signin">Login</a>
+                </div>
+            </div>
+            <div class="col register-sec">
+                <h2 class="text-center">Register Now</h2>
+                <form class="register-form" action="" #f="ngForm" novalidate (ngSubmit)="f.form.valid&&onSubmit()">
+                    <div class="form-group">
+                       
+
+                        <input type="text" class="form-control" name="name" placeholder="Username" id="" [(ngModel)]="formdata.name"
+                            #name="ngModel" required>
+                        <span class="text-danger" *ngIf="this.submit&&name.errors?.['required']">
+                            Name is required.
+                        </span>
+                    </div>
+                    <div class="form-group">
+                        
+
+                        <input type="text" class="form-control" name="email" placeholder="Email" id="" [(ngModel)]="formdata.email"
+                            #email="ngModel" required>
+                        <span class="text-danger" *ngIf="this.submit&&email.errors?.['required']">
+                            Email is required.
+                        </span>
+                    </div>
+                    <div class="form-group">
+                        
+                        <input class="form-control" type="password" placeholder="Password" name="password" id=""
+                            [(ngModel)]="formdata.password" #password="ngModel" required minlength="8">
+                        <span class="text-danger" *ngIf="this.submit&&password.errors?.['required']">
+                            Password is required.
+                        </span>
+                        <span class="text-danger" *ngIf="this.submit&&password.errors?.['minlength']">
+                            Minimum length should be 8 characters
+                        </span>
+                    </div>
+                    <div class="form-group">
+
+                        <span class="text-danger" *ngIf="this.errorMessage">
+                            <p [innerText]="this.errorMessage"></p>
+                        </span>
+                        <div class="text-center" *ngIf="this.loading">
+                            <div class="spinner-border text-primary " role="status">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                        </div>
+
+                        <input type="submit" class="btn btn-login float-right" value="Register" (click)="submit=true"
+                            [disabled]="this.loading">
+                    </div>
+                    <div class="clearfix"></div>
+                    
+
+
+                </form>
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+</section>

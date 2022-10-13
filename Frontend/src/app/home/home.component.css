@@ -1,0 +1,52 @@
+h3{
+    text-align: center;
+    padding-top: 50px;
+}
+body{
+    background: white;
+        background-image: radial-gradient(rgb(193, 192, 192) 1px, transparent 0);
+        background-size: 30px 30px;
+        background-position: -19px -19px;
+        height: 150vh;
+    /* width: 100vw;
+    height: 100vh; */
+}
+.container{
+    font-family: 'Alkalami', serif;
+    font-weight: 400;
+    font-size: 20px;
+    
+}
+
+.formGrp{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+.btn-submit{
+    background-color:#3f5efb;
+    color: whitesmoke;
+    border-radius: 5px;
+    padding: 10px 20px 10px 20px;
+}
+
+.period-submit{
+    background-color: #3f5efb;
+        color: whitesmoke;
+        border-radius: 5px;
+        padding: 10px 20px 10px 20px;
+        margin-top: 20px;
+}
+
+.highlight {
+    border-radius: 1em 0 1em 0;
+    background-image: linear-gradient(-100deg,
+            rgba(20, 186, 241, 0.2),
+            rgba(0, 98, 255, 0.7) 95%,
+            rgba(8, 165, 255, 0.1));
+
+    margin-bottom: 20px;
+}

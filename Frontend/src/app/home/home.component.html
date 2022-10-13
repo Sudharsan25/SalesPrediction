@@ -1,0 +1,39 @@
+
+<body>
+	<app-navbar></app-navbar>
+<div class="container">
+	<h3><span class="highlight">Sales Forecasting</span></h3>
+	<div class="form-group">
+		<p>This application can perform time series analysis on the given sales dataset and return to you the most accurate
+			forecasting of the future sales. Please upload the dataset below and also specify the period for which you want
+			to forecast the sales(Eg: Forecast for the next 20 days). Make sure the dataset has the only the following columns:</p>
+		<ul>
+			<li>Date: Date of Sales</li>
+			<li>Sales: Value of the Sales</li>
+		</ul>
+	</div>
+	<pre></pre>
+	<form #loginForm="ngForm" (ngSubmit)="addData(loginForm.value)">
+		
+	
+		<div class="form-group">	
+			<ngx-dropzone accept="text/csv" (change)="onSelect($event)">
+				<ngx-dropzone-label>Drop the Dataset</ngx-dropzone-label>
+				<ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
+					<ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+				</ngx-dropzone-preview>
+			</ngx-dropzone>
+		</div>
+
+		<button class="btn btn-submit" type="submit">Submit Data</button>
+	</form>
+
+	<form #predictForm="ngForm" (ngSubmit)="onSubmit(predictForm.value)" *ngIf="submitted">
+		<div class="formGrp">
+			<label for="period">Enter the period for which you want to forecast the results for.</label><br>
+			<input type="int" name="period" class="form-control" ngModel>
+			<button class="btn period-submit" type="submit">Submit Period</button>
+		</div>
+	</form>
+</div>	
+</body>
